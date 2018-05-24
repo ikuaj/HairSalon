@@ -16,5 +16,13 @@ public class App {
         return new ModelAndView(model, layout);
       }, new VelocityTemplateEngine());
 
+      // public void save() {
+      //   try(Connection con = DB.sql2o.open()) {
+      //     String sql = "INSERT INTO tasks (firstname) VALUES (:firstname)";
+      //     con.createQuery(sql)
+      //       .addParameter("firstname", this.firstname)
+      //       .executeUpdate();
+      //   }
+      // }
   }
 }
