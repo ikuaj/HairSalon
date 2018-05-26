@@ -5,10 +5,10 @@ import org.sql2o.*;
 public class Stylist {
   private String name;
   private int id;
-  private int number;
+  private int phone_number;
   private String department;
 
-  public Stylist(String name, int number, String department) {
+  public Stylist(String name, int phone_number, String department) {
     this.name = name;
   }
 
@@ -37,8 +37,8 @@ public class Stylist {
      }
    }
 
-   public int number() {
-     return number;
+   public int getPhoneNumber() {
+     return phone_number;
    }
 
   public String getDepartment() {

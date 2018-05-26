@@ -4,29 +4,29 @@ import java.util.List;
 import org.sql2o.*;
 
 public class Client {
-  private String description;
-  private boolean completed;
-  private LocalDateTime createdAt;
   private int id;
+  private String firstname;
+  private String lastname;
+  private String style;
   private int stylistId;
 
-  public Client(String description, int stylistId) {
-    this.description = description;
-    completed = false;
-    createdAt = LocalDateTime.now();
+  public Client(String firstname, String lastname, String style, int stylistId) {
+    this.firstname = firstname;
+    this.lastname = lastname;
+    this.style = style;
     this.stylistId = stylistId;
   }
 
-  public String getDescription() {
-    return description;
+  public String getFirstname() {
+    return firstname;
   }
 
-  public boolean isCompleted() {
-    return completed;
+  public String getLastname() {
+    return lastname;
   }
 
-  public LocalDateTime getCreatedAt() {
-    return createdAt;
+  public String getStyle() {
+    return style;
   }
 
   public int getStylistId() {
@@ -38,7 +38,7 @@ public class Client {
   }
 
   public static List<Client> all() {
-    String sql = "SELECT id, description, stylistId FROM clients";
+    String sql = "SELECT id, firstname, lastname, stylistId FROM clients";
     try(Connection con = DB.sql2o.open()) {
      return con.createQuery(sql).executeAndFetch(Client.class);
     }
@@ -50,7 +50,9 @@ public class Client {
       return false;
     } else {
       Client newClient = (Client) otherClient;
-      return this.getDescription().equals(newClient.getDescription()) &&
+      return this.getFirstname().equals(newClient.getFirstname()) &&
+             this.getLastname().equals(newClient.getLastname()) &&
+             this.getStyle().equals(newClient.getStyle()) &&
              this.getId() == newClient.getId() &&
              this.getStylistId() == newClient.getStylistId();
     }
@@ -58,9 +60,11 @@ public class Client {
 
   public void save() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO clients(description, stylistId) VALUES (:description, :stylistId)";
+      String sql = "INSERT INTO clients(firstname, lastname, style, stylistId) VALUES (:firstname, :lastname, :style, :stylistId)";
       this.id = (int) con.createQuery(sql, true)
-        .addParameter("description", this.description)
+        .addParameter("firstname", this.firstname)
+        .addParameter("lastname", this.lastname)
+        .addParameter("style", this.style)
         .addParameter("stylistId", this.stylistId)
         .executeUpdate()
         .getKey();

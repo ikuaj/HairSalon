@@ -1,0 +1,29 @@
+<h1>Add a client to $stylist.getName()</h1>
+
+<form action="/clients" method="post">
+  <input id="stylistId" name="stylistId" type="hidden" value="$stylist.getId()">
+
+  <div class="col-xl-6">
+  <div class="form-layout form-layout-4">
+    <div class="row">
+        <label class="col-sm-4 form-control-label">firstname: <span class="tx-danger">*</span></label>
+    <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+        <input type="text" class="form-control"  name="firstname" placeholder="Enter firstname">
+    </div>
+    </div>
+    <div class="row mg-t-20">
+        <label class="col-sm-4 form-control-label">lastname: <span class="tx-danger">*</span></label>
+    <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+        <input type="int" class="form-control" name="lastname" placeholder="Enter lastname">
+    </div>
+    </div>  
+    <div class="row mg-t-20">
+        <label class="col-sm-4 form-control-label">style: <span class="tx-danger">*</span></label>
+    <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+        <input type="int" class="form-control" name="style" placeholder="Enter style">
+    </div>
+    </div> 
+  </div>
+  </div><!-- row -->
+  <button type="submit" class="btn btn-success">Add client</button>
+</form>

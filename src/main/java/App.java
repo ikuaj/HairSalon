@@ -31,14 +31,16 @@ public class App {
         return new ModelAndView(model, layout);
       }, new VelocityTemplateEngine());
   
-      post("/client", (request, response) -> {
+      post("/clients", (request, response) -> {
         Map<String, Object> model = new HashMap<String, Object>();
+        String firstname = request.queryParams("firstname");
+        String lastname = request.queryParams("lastname");
+        String style = request.queryParams("style");
         Stylist stylist = Stylist.find(Integer.parseInt(request.queryParams("stylistId")));
-        String description = request.queryParams("description");
-        Client newClient = new Client(description, stylist.getId());
+        Client newClient = new Client(firstname, lastname, style, stylist.getId());
         newClient.save();
         model.put("stylist", stylist);
-        model.put("template", "templates/stylist-client-success.vtl");
+        model.put("template", "templates/stylist-clients-success.vtl");
         return new ModelAndView(model, layout);
       }, new VelocityTemplateEngine());
   

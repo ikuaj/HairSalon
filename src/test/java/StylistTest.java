@@ -14,7 +14,7 @@ public class StylistTest {
   public void tearDown() {
     try(Connection con = DB.sql2o.open()) {
       String deleteClientsQuery = "DELETE FROM clients *;";
-      String deleteStylistsQuery = "DELETE FROM stylist *;";
+      String deleteStylistsQuery = "DELETE FROM stylists *;";
       con.createQuery(deleteClientsQuery).executeUpdate();
       con.createQuery(deleteStylistsQuery).executeUpdate();
     }
@@ -22,7 +22,7 @@ public class StylistTest {
 
   @Test
   public void stylist_instantiatesCorrectly_true() {
-    Stylist testStylist = new Stylist("Home");
+    Stylist testStylist = new Stylist("joel");
     assertEquals(true, testStylist instanceof Stylist);
   }
 
