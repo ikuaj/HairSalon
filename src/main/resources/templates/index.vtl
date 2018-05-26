@@ -1,40 +1,48 @@
+<h1>HAIR SALON</h1>
 
 ## <div class="container image">
 ##     <img src="images/logo.jpg"
 ## </div>
 
-
 <div class = "jumbotron">
+<form action="/stylist" method="post">
 <div class="row mg-t-80">
     <div class="col-xl-6">
     <div class="form-layout form-layout-4">
-        <p class="mg-b-30 tx-gray-600">A form where you input your stylist.</p>
+        <p class="mg-b-30 tx-gray-600">A form where a customer chooses their stylist.</p>
     <div class="row">
-        <label class="col-sm-4 form-control-label">Firstname: <span class="tx-danger">*</span></label>
+        <label class="col-sm-4 form-control-label">name: <span class="tx-danger">*</span></label>
     <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-        <input type="text" class="form-control" placeholder="Enter firstname">
+        <input type="text" class="form-control"  name="name" placeholder="Enter name">
     </div>
     </div><!-- row -->
     <div class="row mg-t-20">
-        <label class="col-sm-4 form-control-label">Lastname: <span class="tx-danger">*</span></label>
+        <label class="col-sm-4 form-control-label">Phone Number: <span class="tx-danger">*</span></label>
     <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-        <input type="text" class="form-control" placeholder="Enter lastname">
+        <input type="int" class="form-control" name="number" placeholder="Enter number">
+    </div>
+    </div>    
+    <div class="row mg-t-20">
+        <label class="col-sm-4 form-control-label">Department: <span class="tx-danger">*</span></label>
+    <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+        <input type="text" class="form-control" name="department" placeholder="Enter department">
     </div>
     </div>
     <div class="form-layout-footer mg-t-30">
-        <button class="btn btn-info">Submit Form</button>
-        <button class="btn btn-secondary">Cancel</button>
+        <button class="btn btn-info" type="submit">Submit Form</button>
     </div><!-- form-layout-footer -->
     </div><!-- form-layout -->
 </div><!-- col-6 -->
+## </form>
 
+<form action="/client" method="post">
 <div class="col-xl-6 mg-t-20 mg-xl-t-0">
     <div class="form-layout form-layout-5">
         <p class="mg-b-30 tx-gray-600">A form where a customer inputs his information.</p>
     <div class="row">
         <label class="col-sm-4 form-control-label"><span class="tx-danger">*</span> Firstname:</label>
     <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-        <input type="text" class="form-control" placeholder="Enter firstname">
+        <input type="text" class="form-control"  placeholder="Enter firstname">
     </div>
     </div><!-- row -->
     <div class="row mg-t-20">
@@ -53,11 +61,12 @@
     <div class="col-sm-8 mg-l-auto">
     <div class="form-layout-footer">
         <button class="btn btn-info">Submit Form</button>
-        <button class="btn btn-secondary">Cancel</button>
     </div><!-- form-layout-footer -->
     </div><!-- col-8 -->
     </div>
     </div><!-- form-layout -->
     </div><!-- col-6 -->
 </div>
+</form>
+</form>
 </div>

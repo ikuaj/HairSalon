@@ -1,5 +1,5 @@
-// import org.sql2o.*;
+import org.sql2o.*;
 
-// public class DB {
-//   public static Sql2o sql2o = new Sql2o("jdbc:postgresql://localhost:5400/stylist", null, null);
-// }
+public class DB {
+  public static Sql2o sql2o = new Sql2o("jdbc:postgresql://localhost:5400/hair_salon", "postgres", "braeburn");
+}

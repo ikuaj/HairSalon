@@ -2,7 +2,7 @@
 // import org.junit.*;
 // import static org.junit.Assert.*;
 
-// public class TaskTest {
+// public class clientTest {
 
 //   @Before
 //   public void setUp() {
