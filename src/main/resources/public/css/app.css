@@ -1,6 +1,6 @@
 .jumbotron {
     margin-top: 150px;
-    /* background-color: transparent; */
+    background-color: transparent; 
 }
 
 body {
@@ -11,7 +11,7 @@ body {
 
 h1 {
     text-align: center;
-    text-decoration-color: black;
+    text-decoration-color: white;
     margin-top: 30px;
 }
 
@@ -22,4 +22,8 @@ h1 {
 
 text {
     text-decoration-color: white;
+}
+
+text {
+    text-align: center;
 }
